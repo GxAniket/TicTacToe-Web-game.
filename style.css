@@ -18,15 +18,15 @@ h1 {
 
 .turn {
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #f0db4f;
   text-align: center;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, minmax(80px, 20vw));
-  grid-template-rows: repeat(3, minmax(80px, 20vw));
+  grid-template-columns: repeat(3, minmax(100px, 12vw));
+  grid-template-rows: repeat(3, minmax(100px, 12vw));
   gap: 5px;
   justify-content: center;
 }
@@ -75,14 +75,24 @@ button:hover {
   background-color: #00cc77;
 }
 
-/* Make text & board larger on small screens */
+/* Phones → Fixed 250% size */
 @media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(3, 250px);
+  }
+
   .cell {
-    font-size: 3rem;
+    font-size: 6rem;
   }
 
   .turn,
   .message {
+    font-size: 2rem;
+  }
+
+  button {
     font-size: 1.5rem;
+    padding: 15px 30px;
   }
 }
